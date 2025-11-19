@@ -3,6 +3,7 @@
 require('../helpers.php');
 require('../Router.php');
 require('../Database.php');
+require('../cors.php');
 
 
 
