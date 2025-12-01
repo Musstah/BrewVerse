@@ -12,7 +12,8 @@ class Database
 
     public function __construct($config)
     {
-        $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
+        // PostgreSQL (Supabase) DSN
+        $dsn = "pgsql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
 
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

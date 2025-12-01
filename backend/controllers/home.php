@@ -1,3 +1,4 @@
 <?php
 
-echo 'Home view';
+// echo 'Home view';
+phpinfo();
