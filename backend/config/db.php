@@ -8,10 +8,18 @@
 //     'password' => '123456'
 // ];
 
+// return [
+//     'host' => 'db.zvkouafoqlpwqgdihrxb.supabase.co',
+//     'port' => '5432',
+//     'dbname' => 'postgres',
+//     'username' => 'postgres',
+//     'password' => 'BrewVerse123!'
+// ];
 return [
-    'host' => 'db.zvkouafoqlpwqgdihrxb.supabase.co',
+    'host' => 'aws-1-eu-north-1.pooler.supabase.com', // replace with Dashboard "Session" host 
     'port' => '5432',
     'dbname' => 'postgres',
-    'username' => 'postgres',
-    'password' => 'BrewVerse123!'
+    'username' => 'postgres.zvkouafoqlpwqgdihrxb',
+    'password' => 'BrewVerse123!',
+    'sslmode' => 'require'
 ];
