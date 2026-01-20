@@ -1,0 +1,16 @@
+{
+  "name": "musstah/brewverse",
+  "description": "Specialty Café Experience Web App",
+  "authors": [
+    {
+      "name": "Dom",
+      "email": "dom@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}

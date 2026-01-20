@@ -1,9 +1,23 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
+
 require('../helpers.php');
-require('../Router.php');
-require('../Database.php');
 require('../cors.php');
+
+use Framework\Router;
+
+// This function autoloads Classes, in this case from Framework directory
+
+/**
+ * This is commented becausei use psr-4 Autoloader and Composer
+ */
+// spl_autoload_register(function ($class) {
+//     $path = dirPath('Framework/' . $class . '.php');
+//     if (file_exists($path)) {
+//         require $path;
+//     }
+// });
 
 
 

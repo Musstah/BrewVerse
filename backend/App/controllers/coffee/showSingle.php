@@ -1,5 +1,7 @@
 <?php
 
+use Framework\Database;
+
 $config = require dirPath('config/db.php');
 $db = new Database($config);
 
@@ -10,8 +12,7 @@ $params = [
 ];
 
 
-
-$pastry = $db->query('SELECT * FROM brewverse.pastries WHERE id =:id', $params)->fetch();
-echo json_encode($pastry);
+$coffee = $db->query('SELECT * FROM brewverse.coffee WHERE id = :id', $params)->fetch();
+echo json_encode($coffee);
 
 // inspect($coffee);
