@@ -7,6 +7,7 @@ require('../cors.php');
 
 use Framework\Router;
 
+
 // This function autoloads Classes, in this case from Framework directory
 
 /**
@@ -29,7 +30,7 @@ $routes = require('../routes.php');
 
 // Get current URI and HTTP method
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$method = $_SERVER['REQUEST_METHOD'];
+
 // inspectAndDie($uri);
 // Route request
-$router->route($uri, $method);
+$router->route($uri);
