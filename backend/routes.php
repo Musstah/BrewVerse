@@ -7,8 +7,9 @@ $router->get('/', 'HomeController@index');
 
 
 $router->get('/api/coffee', 'coffee\\CoffeeController@index');
-$router->get('/api/coffee/create', 'coffee\\CoffeeController@create');
 $router->get('/api/coffee/{id}', 'coffee\\CoffeeController@show');
+
+$router->post('/api/coffee', 'coffee\\CoffeeController@store');
 
 
 $router->get('/api/pastry', 'pastries\\PastryController@index');

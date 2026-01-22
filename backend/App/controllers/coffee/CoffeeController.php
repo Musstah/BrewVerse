@@ -4,6 +4,7 @@ namespace App\Controllers\coffee;
 
 use App\Controllers\ErrorController;
 use Framework\Database;
+use Framework\Validation;
 
 
 
@@ -24,7 +25,6 @@ class CoffeeController
      */
     public function index()
     {
-
         $coffee = $this->db->query('SELECT * FROM brewverse.coffee')->fetchAll();
         echo json_encode($coffee);
     }
@@ -54,12 +54,28 @@ class CoffeeController
     }
 
     /**
-     * Creates new coffee in DB
+     * Store new coffee in DB
      *
      * @return void
      */
-    public function create()
+    public function store()
     {
-        echo 'Create coffee';
+        $allowedFields = [
+            "name",
+            "price",
+            "img",
+            "description",
+            "origin",
+            "brew",
+            "farmInfo"
+        ];
+
+        // Takes two arrays and returns a new array if key is in both arrays
+        // Array_flip() - turns keys into values and values into keys
+        $newCoffeeData = array_intersect_key($_POST, array_flip($allowedFields));
+
+        $newCoffeeData = array_map('sanitize', $newCoffeeData);
+
+        inspectAndDie($newCoffeeData);
     }
 }
