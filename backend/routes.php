@@ -10,6 +10,9 @@ $router->get('/api/coffee', 'coffee\\CoffeeController@index');
 $router->get('/api/coffee/{id}', 'coffee\\CoffeeController@show');
 
 $router->post('/api/coffee', 'coffee\\CoffeeController@store');
+$router->delete('/api/coffee/{id}', 'coffee\\CoffeeController@destroy');
+$router->get('/api/coffee/edit/{id}', 'coffee\\CoffeeController@edit');
+$router->put('/api/coffee/{id}', 'coffee\\CoffeeController@update');
 
 
 $router->get('/api/pastry', 'pastries\\PastryController@index');

@@ -97,6 +97,7 @@ class Router
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
 
+
         foreach ($this->routes as $route) {
 
             // Split current URI into segments
@@ -134,20 +135,6 @@ class Router
                     return;
                 }
             }
-
-
-
-            // if ($route['uri'] === $uri && $route['method'] === $method) {
-            //     // Extract controller and controller method
-            //     $controller = 'App\\Controllers\\' . $route['controller'];
-            //     $controllerMethod = $route['controllerMethod'];
-
-            //     // Instantiate the controller and call the method
-            //     $controllerInstance = new $controller();
-            //     $controllerInstance->$controllerMethod();
-
-            //     return;
-            // }
         }
         ErrorController::notFound();
     }
