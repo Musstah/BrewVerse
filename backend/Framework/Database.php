@@ -38,7 +38,7 @@ class Database
      * @param string $query
      * 
      * @return PDOStatement
-     * @throes PDOException
+     * @throws PDOException
      */
     public function query($query, $params = [])
     {
@@ -47,6 +47,15 @@ class Database
 
             // Bind named params
             foreach ($params as $param => $value) {
+
+                // Convert PHP array → Postgres array literal
+                if (is_array($value)) {
+                    $value = '{' . implode(',', array_map(
+                        fn($v) => '"' . str_replace('"', '\"', $v) . '"',
+                        $value
+                    )) . '}';
+                }
+
                 $sth->bindValue(':' . $param, $value);
             }
 

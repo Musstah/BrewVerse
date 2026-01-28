@@ -219,6 +219,7 @@ class CoffeeController
 
         $updateValues = array_map('sanitize', $updateValues);
 
+        inspectAndDie($updateValues);
 
         $requiredFields = [
             "name",

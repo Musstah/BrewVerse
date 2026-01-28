@@ -51,14 +51,22 @@ function formatPrice($salary)
 }
 
 /**
- * Sanitize data
+ * Sanitize data, if is_string the just sanitize, if array it loops loop through and sanitizes each string
  * 
  * @param string $dirty
  * @return string 
  */
 function sanitize($dirty)
 {
-    return filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS);
+    return is_string($dirty)
+        ? filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS) : $dirty;
+    // : (is_array($dirty)
+    //     ? array_map(
+    //         fn($item) => filter_var(trim($item), FILTER_SANITIZE_SPECIAL_CHARS),
+    //         $dirty
+    //     )
+    //     : $dirty
+    // );
 }
 
 /**
